@@ -1,7 +1,6 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import uuidv1 from  'uuid/v1';
 
 const GET_PERSONS = gql`
   {
@@ -13,10 +12,10 @@ const GET_PERSONS = gql`
 `;
 
 const Loading = () =>
-  <div>Loading ...</div>
+  (<div>Loading ...</div>);
 
-const Persons = () => (
-  <Query query={GET_PERSONS}>
+const Persons = () =>
+  (<Query query={GET_PERSONS}>
     {({ data, loading }) => {
       const { persons } = data;
 
@@ -24,19 +23,16 @@ const Persons = () => (
         return <Loading/>;
       }
 
+      let personList = persons.map((person, index) => {
+        return (<li key={index}>{person.firstname} {person.lastname}</li>);
+      });
+
       return (
         <div>
-          {mapPersons(persons)}
+          {personList}
         </div>
       );
     }}
-  </Query>
-);
-
-const mapPersons = (persons) => {
-  return persons.map(person => {
-    return (<li key={uuidv1()}>{person.firstname} {person.lastname}</li>);
-  });
-};
+  </Query>);
 
 export default Persons;

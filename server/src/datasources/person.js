@@ -1,15 +1,12 @@
 class PersonAPI {
   async getPersons() {
-
-    let result = [{
+    return [{
       firstname: 'Jane',
       lastname: 'Doe'
     }, {
       firstname: 'John',
       lastname: 'Doe'
     }];
-
-    return result;
   }
 }
 
