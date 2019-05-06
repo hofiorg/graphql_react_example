@@ -1,0 +1,13 @@
+{
+  "name": "graphql_react_example_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.2.1"
+  }
+}

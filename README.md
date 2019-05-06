@@ -1,0 +1,1 @@
+# graphql_react_example  &middot; [![Build Status](https://travis-ci.org/hofiorg/graphql_react_example.svg?branch=master)](https://travis-ci.org/hofiorg/graphql_react_example)
