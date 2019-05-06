@@ -7,6 +7,9 @@ do
     echo "Testing component: $component"
     cd $component
     npm install
-    npm test
+    if [ "$component" == "client" ];
+    then
+      npm test
+    fi
     cd ..
 done
