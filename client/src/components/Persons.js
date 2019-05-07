@@ -5,6 +5,7 @@ import { Query } from 'react-apollo';
 const GET_PERSONS = gql`
   {
     persons {
+      id
       firstname
       lastname
     }
@@ -23,8 +24,8 @@ const Persons = () =>
         return <Loading/>;
       }
 
-      let personList = persons.map((person, index) => {
-        return (<li key={index}>{person.firstname} {person.lastname}</li>);
+      let personList = persons.map(person => {
+        return (<li key={person.id}>{person.firstname} {person.lastname}</li>);
       });
 
       return (

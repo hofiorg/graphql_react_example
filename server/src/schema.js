@@ -5,7 +5,12 @@ const typeDefs = gql`
     persons: [Person]
   }
 
+  type Subscription {
+    personAdded: Person
+  }  
+
   type Person {
+    id: String
     firstname: String
     lastname: String
   }
