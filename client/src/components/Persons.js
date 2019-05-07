@@ -1,6 +1,6 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
-import { Query } from 'react-apollo';
+import { withApollo } from 'react-apollo';
 
 const GET_PERSONS = gql`
   {
@@ -12,28 +12,50 @@ const GET_PERSONS = gql`
   }
 `;
 
-const Loading = () =>
-  (<div>Loading ...</div>);
+const PERSONS_SUBSCRIPTION = gql`
+  subscription personAdded {
+    personAdded {
+      id
+      firstname
+      lastname
+    }
+  }
+`;
 
-const Persons = () =>
-  (<Query query={GET_PERSONS}>
-    {({ data, loading }) => {
-      const { persons } = data;
+class Persons extends React.Component {
 
-      if (loading || !persons) {
-        return <Loading/>;
-      }
+  constructor(props) {
+    super(props);
+    this.state = {persons: []};
+  }
 
-      let personList = persons.map(person => {
-        return (<li key={person.id}>{person.firstname} {person.lastname}</li>);
+  componentDidMount() {
+    this.props.client
+      .query({ query: GET_PERSONS })
+      .then(({ data: {persons} }) => {
+        this.setState({ persons });
       });
 
-      return (
-        <div>
-          {personList}
-        </div>
-      );
-    }}
-  </Query>);
+    this.props.client
+      .subscribe({ query: PERSONS_SUBSCRIPTION})
+      .subscribe(({ data: {personAdded} }) => {
+        this.setState((state) => {
+          state.persons.push(personAdded);
+          return {persons: state.persons};
+        });
+      });
+  }
 
-export default Persons;
+  render() {
+    if(this.state.persons.length === 0)
+      return <div>Loading ...</div>;
+
+    let personList = this.state.persons.map(person => {
+      return (<li key={person.id}>{person.firstname} {person.lastname}</li>);
+    });
+
+    return (<div>{personList}</div>);
+  }
+}
+
+export default withApollo(Persons);
