@@ -37,6 +37,7 @@ npm start
 | Apollo Client                       | <https://www.apollographql.com/docs/react/>                                                                   |
 | Apollo Subscriptions                | <https://www.apollographql.com/docs/react/advanced/subscriptions>                                             |
 |                                     | <https://www.apollographql.com/docs/apollo-server/features/subscriptions>                                     |                                
+| faker.js                            | <https://github.com/marak/Faker.js/>                                                                          |
 | GraphQL Queries                     | <https://graphql.org/learn/queries/>                                                                          |
 | GraphQL Subscriptions on the Server | <https://blog.apollographql.com/tutorial-graphql-subscriptions-server-side-e51c32dc2951>                      |
 | GraphQL Subscriptions and Apollo    | <https://www.prisma.io/blog/how-to-build-a-real-time-chat-with-graphql-subscriptions-and-apollo-d4004369b0d4> |

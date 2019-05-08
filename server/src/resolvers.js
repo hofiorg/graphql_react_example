@@ -1,5 +1,6 @@
 const {PubSub} = require('apollo-server');
 const uuidv4 = require('uuid/v4');
+const faker = require('faker');
 
 const pubsub = new PubSub();
 
@@ -20,11 +21,12 @@ module.exports = {
 function publishNewPerson() {
   let uuid = uuidv4();
   console.log(`publish new person ${uuid}`);
+
   pubsub.publish(PERSON_ADDED, {
     personAdded: {
       id: `${uuid}`,
-      firstname: `Frank`,
-      lastname: `Uuid ${uuid}`
+      firstname: faker.fake("{{name.firstName}}"),
+      lastname: faker.fake("{{name.lastName}}")
     }
   });
 }
