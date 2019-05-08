@@ -1,4 +1,4 @@
-const { PubSub } = require('apollo-server');
+const {PubSub} = require('apollo-server');
 const uuidv4 = require('uuid/v4');
 
 const pubsub = new PubSub();
@@ -7,7 +7,7 @@ const PERSON_ADDED = 'PERSON_ADDED';
 
 module.exports = {
   Query: {
-    persons: (_, { id }, { dataSources }) =>
+    persons: (_, {id}, {dataSources}) =>
       dataSources.personAPI.getPersons()
   },
   Subscription: {
@@ -20,11 +20,13 @@ module.exports = {
 function publishNewPerson() {
   let uuid = uuidv4();
   console.log(`publish new person ${uuid}`);
-  pubsub.publish(PERSON_ADDED, { personAdded: {
-    id: `${uuid}`,
-    firstname: `Frank`,
-    lastname: `Uuid ${uuid}`
-  } });
+  pubsub.publish(PERSON_ADDED, {
+    personAdded: {
+      id: `${uuid}`,
+      firstname: `Frank`,
+      lastname: `Uuid ${uuid}`
+    }
+  });
 }
 
 setInterval(publishNewPerson, 5000);

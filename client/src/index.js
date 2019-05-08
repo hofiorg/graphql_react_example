@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
-import { WebSocketLink } from 'apollo-link-ws';
-import { HttpLink } from 'apollo-link-http';
-import { split } from 'apollo-link';
-import { getMainDefinition } from 'apollo-utilities';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import {ApolloClient} from 'apollo-client';
+import {ApolloProvider} from 'react-apollo';
+import {WebSocketLink} from 'apollo-link-ws';
+import {HttpLink} from 'apollo-link-http';
+import {split} from 'apollo-link';
+import {getMainDefinition} from 'apollo-utilities';
+import {InMemoryCache} from 'apollo-cache-inmemory';
 
 const httpLink = new HttpLink({
   uri: 'http://localhost:4000/'
@@ -24,7 +24,7 @@ const wsLink = new WebSocketLink({
 
 const link = split(
   // split based on operation type
-  ({ query }) => {
+  ({query}) => {
     const definition = getMainDefinition(query);
     return (
       definition.kind === 'OperationDefinition' &&
@@ -43,7 +43,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <App/>
   </ApolloProvider>,
   document.getElementById('root'));
 

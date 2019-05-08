@@ -1,6 +1,6 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
-import { withApollo } from 'react-apollo';
+import {gql} from 'apollo-boost';
+import {withApollo} from 'react-apollo';
 
 const GET_PERSONS = gql`
   {
@@ -31,14 +31,14 @@ class Persons extends React.Component {
 
   componentDidMount() {
     this.props.client
-      .query({ query: GET_PERSONS })
-      .then(({ data: {persons} }) => {
-        this.setState({ persons });
+      .query({query: GET_PERSONS})
+      .then(({data: {persons}}) => {
+        this.setState({persons});
       });
 
     this.props.client
-      .subscribe({ query: PERSONS_SUBSCRIPTION})
-      .subscribe(({ data: {personAdded} }) => {
+      .subscribe({query: PERSONS_SUBSCRIPTION})
+      .subscribe(({data: {personAdded}}) => {
         this.setState((state) => {
           state.persons.push(personAdded);
           return {persons: state.persons};
@@ -47,7 +47,7 @@ class Persons extends React.Component {
   }
 
   render() {
-    if(this.state.persons.length === 0)
+    if (this.state.persons.length === 0)
       return <div>Loading ...</div>;
 
     let personList = this.state.persons.map(person => {
