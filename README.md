@@ -4,13 +4,9 @@
 
 ```bash
 git clone https://github.com/hofiorg/graphql_react_example.git
-
 cd graphql_react_example/server
-
 npm install
-
 cd ../client
-
 npm install
 ```
 
@@ -18,7 +14,6 @@ npm install
 
 ```bash
 cd server
-
 npm start
 ```
 
@@ -26,7 +21,6 @@ npm start
 
 ```bash
 cd client
-
 npm start
 ```
 
