@@ -1,6 +1,7 @@
 import React from 'react';
 import {gql} from 'apollo-boost';
 import {withApollo} from 'react-apollo';
+import {isEmpty} from 'lodash'
 
 const GET_PERSONS = gql`
   {
@@ -47,14 +48,14 @@ class Persons extends React.Component {
   }
 
   render() {
-    if (this.state.persons.length === 0)
+    if (isEmpty(this.state.persons))
       return <div>Loading ...</div>;
 
-    let personList = this.state.persons.map(person => {
-      return (<li key={person.id}>{person.firstname} {person.lastname}</li>);
-    });
+    let personList = this.state.persons.map(person =>
+      <li key={person.id}>{person.firstname} {person.lastname}</li>
+    );
 
-    return (<div>{personList}</div>);
+    return <div>{personList}</div>;
   }
 }
 
