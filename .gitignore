@@ -4,3 +4,4 @@ node_modules
 package-lock.json
 !/.idea/runConfigurations/*.xml
 !/.idea/runConfigurations/
+client/build
