@@ -9,5 +9,8 @@
     "apollo-server": "^2.4.8",
     "faker": "^4.1.0",
     "graphql": "^14.2.1"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
   }
 }
