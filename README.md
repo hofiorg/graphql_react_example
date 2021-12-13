@@ -1,4 +1,4 @@
-# graphql_react_example  &middot; [![Build Status](https://travis-ci.org/hofiorg/graphql_react_example.svg?branch=master)](https://travis-ci.org/hofiorg/graphql_react_example)
+# graphql_react_example &middot; ![node_js workflow](https://github.com/hofiorg/graphql_react_example/actions/workflows/node.js.yml/badge.svg)
 
 ## Installation
 
