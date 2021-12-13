@@ -27,7 +27,7 @@ npm start
 ## Related Links
 
 |                                     |                                                                                                               |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | Apollo Client                       | <https://www.apollographql.com/docs/react/>                                                                   |
 | Apollo Subscriptions                | <https://www.apollographql.com/docs/react/advanced/subscriptions>                                             |
 |                                     | <https://www.apollographql.com/docs/apollo-server/features/subscriptions>                                     |                                

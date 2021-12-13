@@ -1,3 +1,0 @@
-before_install:
-  - chmod +x travis.sh
-script: "./travis.sh"
