@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {ApolloClient} from 'apollo-client';
-import {ApolloProvider} from 'react-apollo';
-import {WebSocketLink} from 'apollo-link-ws';
-import {HttpLink} from 'apollo-link-http';
-import {split} from 'apollo-link';
-import {getMainDefinition} from 'apollo-utilities';
-import {InMemoryCache} from 'apollo-cache-inmemory';
+import {ApolloClient} from '@apollo/client';
+import {ApolloProvider} from '@apollo/client/react/context';
+import {WebSocketLink} from '@apollo/client/link/ws';
+import {HttpLink} from '@apollo/client/link/http';
+import {split} from '@apollo/client/link/core';
+import {getMainDefinition} from '@apollo/client/utilities';
+import {InMemoryCache} from '@apollo/client';
 
 const httpLink = new HttpLink({
   uri: 'http://localhost:4000/'

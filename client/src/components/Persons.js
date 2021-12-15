@@ -1,6 +1,6 @@
 import React from 'react';
-import {gql} from 'apollo-boost';
-import {withApollo} from 'react-apollo';
+import {gql} from 'graphql-tag';
+import {withApollo} from '@apollo/client/react/hoc';
 import {isEmpty} from 'lodash'
 
 const GET_PERSONS = gql`
@@ -41,8 +41,12 @@ class Persons extends React.Component {
       .subscribe({query: PERSONS_SUBSCRIPTION})
       .subscribe(({data: {personAdded}}) => {
         this.setState((state) => {
-          state.persons.push(personAdded);
-          return {persons: state.persons};
+          return {
+              persons: [
+                ...state.persons,
+                personAdded
+              ]
+          };
         });
       });
   }
