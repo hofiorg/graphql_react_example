@@ -6,9 +6,9 @@
     "start": "node src/index.js"
   },
   "devDependencies": {
-    "apollo-server": "^2.4.8",
-    "faker": "^4.1.0",
-    "graphql": "^14.2.1"
+    "apollo-server": "^2.25.3",
+    "faker": "^5.5.3",
+    "graphql": "^15.8.0"
   },
   "dependencies": {
     "uuid": "^8.3.2"
