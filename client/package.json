@@ -34,5 +34,10 @@
     "graphql-tag": "^2.12.6",
     "subscriptions-transport-ws": "^0.11.0",
     "react-scripts": "^5.0.1"
-  }
+  },
+  "overrides": {
+    "react-scripts": {
+      "postcss":"8.4.38"
+    }
+  }  
 }
