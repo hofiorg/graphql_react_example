@@ -4,3 +4,4 @@ node_modules
 !/.idea/runConfigurations/*.xml
 !/.idea/runConfigurations/
 client/build
+client/dist
