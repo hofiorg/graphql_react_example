@@ -8,6 +8,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![node_js workflow](https://github.com/hofiorg/graphql-react-example/actions/workflows/node.js.yml/badge.svg)
 
+Example app using GraphQL, React, Apollo, and Vite, demonstrating GraphQL communication with a Node.js backend and a React frontend.
+
 ## 🛠️ Installation
 
 ```sh
