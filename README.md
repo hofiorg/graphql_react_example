@@ -1,9 +1,10 @@
 # graphql-react-example
 
-![GraphQL 16.1.0](https://img.shields.io/badge/GraphQL-16.1.0-ef4081?logo=graphql)
-![React 16.14.0](https://img.shields.io/badge/React-16.14.0-61dafb?logo=react)
-![Vite 6.3.5](https://img.shields.io/badge/Vite-6.3.5-646cff?logo=vite)
-![Apollo](https://img.shields.io/badge/Apollo-Client-311c87?logo=apollo-graphql)
+![GraphQL 16.11.0](https://img.shields.io/badge/GraphQL-16.11.0-ef4081?logo=graphql)
+![React 19.1.0](https://img.shields.io/badge/React-19.1.0-61dafb?logo=react)
+![Vite 7.0.0](https://img.shields.io/badge/Vite-7.0.0-646cff?logo=vite)
+![Apollo Client 3.13.8](https://img.shields.io/badge/Apollo_Client-3.13.8-311c87?logo=apollo-graphql)
+![Apollo Server 3.13.0](https://img.shields.io/badge/Apollo_Server-3.13.0-311c87?logo=apollo-graphql)
 ![Lodash 4.17.21](https://img.shields.io/badge/Lodash-4.17.21-3492ff?logo=lodash)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![node_js workflow](https://github.com/hofiorg/graphql-react-example/actions/workflows/node.js.yml/badge.svg)
